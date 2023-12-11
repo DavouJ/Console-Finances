@@ -87,21 +87,36 @@ var finances = [
   ['Feb-2017', 671099],
 ];
 
+var profitLossDiff = []
+
+var totalChanges = 0 
+var avgDiff = 0
+
 var profitLoss = 0
 
+var financeLength = finances.length
 
-for(var i = 0; i < finances.length; i++ ){
+
+for(var i = 0; i < financeLength; i++ ){
   profitLoss = profitLoss + finances[i][1]
-  for(var j = 0; j < finances.length; j++){
-
-  }
 }
+for(var j = 1; j < financeLength; j++){
+    console.log(finances[j-1][1])
+    profitLossDiff[j-1] = finances[j][1] - finances[j-1][1] 
+    totalChanges = totalChanges + profitLossDiff[j-1]
+    //console.log(profitLossDiff[i])
+    avgDiff = totalChanges / (financeLength-1)
+}
+  
 
+
+console.log(totalChanges)
 
 
 console.log("*******Financial Analysis*******")
 console.log("--------------------------------")
 console.log(`Total Months: ${finances.length}`)
 console.log("--------------------------------")
-console.log(`Net Total Profit/Loss: £${profitLoss}`)
+console.log(`Net Total Profit/Loss: ${profitLoss}`)
 console.log("--------------------------------")
+console.log(`Average Profit/Loss Difference: ${Math.round((avgDiff + Number.EPSILON) * 100) / 100}`)
