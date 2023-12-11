@@ -90,33 +90,62 @@ var finances = [
 var profitLossDiff = []
 
 var totalChanges = 0 
+
 var avgDiff = 0
 
 var profitLoss = 0
 
 var financeLength = finances.length
 
+var bestMonthValue = 0
+
+var worstMonthValue = 0
+
+var bestMonth = ""
+
+var worstMonth = ""
+
 
 for(var i = 0; i < financeLength; i++ ){
   profitLoss = profitLoss + finances[i][1]
 }
 for(var j = 1; j < financeLength; j++){
-    console.log(finances[j-1][1])
-    profitLossDiff[j-1] = finances[j][1] - finances[j-1][1] 
-    totalChanges = totalChanges + profitLossDiff[j-1]
-    //console.log(profitLossDiff[i])
-    avgDiff = totalChanges / (financeLength-1)
+    
+  profitLossDiff[j-1] = finances[j][1] - finances[j-1][1] 
+  totalChanges = totalChanges + profitLossDiff[j-1]
+  console.log(profitLossDiff[j-1])
+  avgDiff = totalChanges / (financeLength-1)
+
+  if(bestMonthValue < profitLossDiff[j-1]){
+    bestMonthValue = profitLossDiff[j-1]
+    bestMonth = finances[j][0]
+  }
+  if(worstMonthValue > profitLossDiff[j-1]){
+    worstMonthValue = profitLossDiff[j-1]
+    worstMonth = finances[j][0]
+  }
 }
-  
 
 
-console.log(totalChanges)
 
 
 console.log("*******Financial Analysis*******")
 console.log("--------------------------------")
+console.log("")
 console.log(`Total Months: ${finances.length}`)
+console.log("")
 console.log("--------------------------------")
+console.log("")
 console.log(`Net Total Profit/Loss: ${profitLoss}`)
+console.log("")
 console.log("--------------------------------")
+console.log("")
 console.log(`Average Profit/Loss Difference: ${Math.round((avgDiff + Number.EPSILON) * 100) / 100}`)
+console.log("")
+console.log("--------------------------------")
+console.log("")
+console.log(`Best Month (Profits): ${bestMonth} (£${bestMonthValue})`)
+console.log("")
+console.log("--------------------------------")
+console.log("")
+console.log(`Worst Month (Losses): ${worstMonth} (£${worstMonthValue})`)
