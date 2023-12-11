@@ -1,3 +1,11 @@
+var profitLossDiff = []
+var totalChanges = 0 
+var avgDiff = 0
+var profitLoss = 0
+var bestMonthValue = 0
+var worstMonthValue = 0
+var bestMonth = ""
+var worstMonth = ""
 var finances = [
   ['Jan-2010', 867884],
   ['Feb-2010', 984655],
@@ -85,26 +93,8 @@ var finances = [
   ['Dec-2016', 60988],
   ['Jan-2017', 138230],
   ['Feb-2017', 671099],
-];
-
-var profitLossDiff = []
-
-var totalChanges = 0 
-
-var avgDiff = 0
-
-var profitLoss = 0
-
+]
 var financeLength = finances.length
-
-var bestMonthValue = 0
-
-var worstMonthValue = 0
-
-var bestMonth = ""
-
-var worstMonth = ""
-
 
 for(var i = 0; i < financeLength; i++ ){
   profitLoss = profitLoss + finances[i][1]
@@ -113,7 +103,6 @@ for(var j = 1; j < financeLength; j++){
     
   profitLossDiff[j-1] = finances[j][1] - finances[j-1][1] 
   totalChanges = totalChanges + profitLossDiff[j-1]
-  console.log(profitLossDiff[j-1])
   avgDiff = totalChanges / (financeLength-1)
 
   if(bestMonthValue < profitLossDiff[j-1]){
@@ -125,9 +114,6 @@ for(var j = 1; j < financeLength; j++){
     worstMonth = finances[j][0]
   }
 }
-
-
-
 
 console.log("*******Financial Analysis*******")
 console.log("--------------------------------")
