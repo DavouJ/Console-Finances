@@ -63,8 +63,8 @@ SOFTWARE.
 
 ## Badges CHANGE
 
-![badmath](https://img.shields.io/badge/HTML-8.2-blue)
-![badmath](https://img.shields.io/badge/JS-91.8-orange)
+![badmath](https://img.shields.io/badge/HTML-8.3-blue)
+![badmath](https://img.shields.io/badge/JS-91.7-orange)
 
 
 ## How to Contribute
