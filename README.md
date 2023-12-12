@@ -15,7 +15,7 @@ Application deployed via the live GitHub URL: https://davouj.github.io/Console-F
 
 Code for analysing the financial records of a company
 
-![Image of page and console](/assets/images/newportfoliogif.gif)
+![Image of page and console](./assets/images/Screenshot%202023-12-12%20at%2000.13.42.png)
 
 ## Features
 
